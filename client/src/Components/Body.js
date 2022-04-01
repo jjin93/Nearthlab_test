@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-
+import Photo from "./BodyPhoto/Photo";
 function Body() {
   const [cards, setCards] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -32,7 +32,18 @@ function Body() {
   if (!cards) return null;
 
   //드디어 cards가 성공적으로 받아와진 상태.
-  return <div> card 영역입니다.</div>;
+  return (
+    <div>
+      <div>
+        <span className="totalCount">전체 {cards.meta.total} 개</span>
+      </div>
+     
+        {cards.photos.map((data, index) => (
+          <Photo key={index} data={data} />
+        ))}
+      
+    </div>
+  );
 }
 
 export default Body;

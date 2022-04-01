@@ -54,15 +54,16 @@ img.Bitmap {
   object-fit: contain;
 }
 
-.contents {
-  
+.content {
   height: 19px;
   margin: 12px 8px 24px 4px;
   padding: 0 0 1px;
   float: left;
 }
+/* .contents{
+} */
 
-.labelName{
+.labelName {
   width: 59px;
   height: 18px;
   margin: 0 0 0 6px;
@@ -74,4 +75,45 @@ img.Bitmap {
   line-height: normal;
   letter-spacing: -0.5px;
   color: #727682;
+}
+
+.Path-2 {
+  width: 739px;
+  height: 1px;
+  margin: 24px 0;
+  border: solid 1px #dfe3ea;
+}
+
+.header {
+  width: 750px;
+  height: 80px;
+  padding: 27px 27px 30px 28px;
+}
+.totalCount {
+  width: 86px;
+  height: 24px;
+  margin: 24px 6px 12px 0;
+  font-family: NotoSansCJKkr;
+  font-size: 16px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -0.5px;
+  color: #434959;
+}
+
+.card {
+  width: 180px;
+  height: 180px;
+  margin: 12px 6px 6px 0;
+  padding: 0 0 10px;
+}
+
+.photo{
+  width: 180px;
+  height: 140px;
+  margin: 0 0 11px;
+  padding: 8px 10px 114px 130px;
+  object-fit: contain;
 }

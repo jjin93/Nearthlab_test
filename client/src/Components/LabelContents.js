@@ -32,7 +32,7 @@ function LabelContents() {
     if (!labelType) return null;
     
     return (
-        <div>
+        <div className="contents">
             {labelType.map((label, index) => (
                 <Label key={index} label={label}/>
             ))}

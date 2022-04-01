@@ -1,26 +1,29 @@
 import React from "react";
 import Body from "./Components/Body";
 import styled from "styled-components";
-import LabelContents from "./Components/LabelContents"; 
-import "./App.css";
+import LabelContents from "./Components/LabelContents";
 
 function App() {
   return (
-    <div className="frame">
-      <div className="Rectangle">
-        <img src={require("./label.png")} alt="" class="Group-2" />
+    <div class="container md mx-auto px-4">
+      <div class="box-border h-24 p-4 columns-2">
+        <div class="box-content w-5 h-5">
+          <img src={require("./label.png")} alt="" class="object-cover" />
+        </div>
+        <div class="box-content">
         <span class="Text-Style">라벨 종류 선택</span>
-        <LabelContents/>
+        </div>
+        </div>
+
+        <div>
+        <LabelContents />
+        </div>
+        <div class="Path-2" />
+        <Body />
       </div>
-    </div>
   );
 }
 
-// const TestStyled = styled.div`
-//   font-size: 50px;
-//   color: white;
-//   background-color: black;
-//   text-align: center;
-// `;
+
 
 export default App;
