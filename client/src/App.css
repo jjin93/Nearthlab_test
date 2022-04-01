@@ -1,17 +1,77 @@
-.App {
-  text-align: center;
+.frame {
+  width: 1280px;
+  height: 1200px;
+  padding: 99px 243px 98px;
+  background-color: #f6f6f7;
 }
 
-
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.Rectangle {
+  width: 794px;
+  height: 1003px;
+  padding: 27px 27px 30px 28px;
+  border-radius: 2px;
+  box-shadow: 0 2px 2px 0 #ecedef;
+  border: solid 1px #dfe3ea;
+  background-color: #fff;
+}
+img.Group-2 {
+  width: 20px;
+  height: 20px;
+  margin: 2px 2px 14px 0;
+  object-fit: contain;
+  float: left;
 }
 
+.Text-Style {
+  width: 93px;
+  height: 24px;
+  margin: 0 71px 12px 2px;
+  font-family: NotoSansCJKkr;
+  font-size: 16px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -0.5px;
+  color: #434959;
+}
+
+.CardRectangle {
+  width: 180px;
+  height: 180px;
+  margin: 12px 6px 6px 0;
+  padding: 0 0 10px;
+  border-radius: 2px;
+  border: solid 1px #dfe3ea;
+  background-color: #fff;
+}
+
+img.Bitmap {
+  width: 180px;
+  height: 140px;
+  margin: 0 0 11px;
+  padding: 8px 10px 114px 130px;
+  object-fit: contain;
+}
+
+.contents {
+  
+  height: 19px;
+  margin: 12px 8px 24px 4px;
+  padding: 0 0 1px;
+  float: left;
+}
+
+.labelName{
+  width: 59px;
+  height: 18px;
+  margin: 0 0 0 6px;
+  font-family: NotoSansCJKkr;
+  font-size: 13px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -0.5px;
+  color: #727682;
+}
