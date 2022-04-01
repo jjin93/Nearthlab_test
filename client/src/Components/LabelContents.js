@@ -32,7 +32,7 @@ function LabelContents() {
     if (!labelType) return null;
     
     return (
-        <div className="contents">
+        <div className="flex flex-row mt-5 mb-5">
             {labelType.map((label, index) => (
                 <Label key={index} label={label}/>
             ))}

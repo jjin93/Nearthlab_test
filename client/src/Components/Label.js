@@ -5,7 +5,7 @@ const Label = (props) => {
     
     
   return (
-    <div className = 'content'>
+    <div className = 'mr-3'>
       <input type="checkbox" />
       <span class="labelName">{labelName[1]}</span>
     </div>

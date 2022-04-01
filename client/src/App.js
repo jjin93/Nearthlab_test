@@ -2,28 +2,22 @@ import React from "react";
 import Body from "./Components/Body";
 import styled from "styled-components";
 import LabelContents from "./Components/LabelContents";
+import {ReactComponent as LabelIcon} from "./group-2.svg"
 
 function App() {
   return (
-    <div class="container md mx-auto px-4">
-      <div class="box-border h-24 p-4 columns-2">
-        <div class="box-content w-5 h-5">
-          <img src={require("./label.png")} alt="" class="object-cover" />
+    <div className="max-w-7xl mx-auto px-4 border border-red-400">
+      <div className="max-w-3xl mx-auto px-4 border border-grey-400">
+        <div className="flex flex-row max-w-3xl mx-auto pt-7 border border-yellow-400">
+          <LabelIcon  className="mt-1.5 mr-0.5 mb-3 ml-0"/>
+          <span className="mr-16 mb-3 ml-0.5 font-sans text-base">라벨 종류 선택</span>
         </div>
-        <div class="box-content">
-        <span class="Text-Style">라벨 종류 선택</span>
-        </div>
-        </div>
-
-        <div>
         <LabelContents />
-        </div>
-        <div class="Path-2" />
+        <div class="border border-grey-400" />
         <Body />
       </div>
+    </div>
   );
 }
-
-
 
 export default App;

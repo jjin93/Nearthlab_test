@@ -15,7 +15,6 @@ function Body() {
       setLoading(true);
       const response = await axios.get(" https://tester-api.nearthlab.com/v1/photos?page=1&per=16");
       setCards(response.data); // 데이터는 response.data 안에 들어있음
-      console.log(response.data);
     } catch (e) {
       setError(e);
     }
@@ -34,14 +33,14 @@ function Body() {
   //드디어 cards가 성공적으로 받아와진 상태.
   return (
     <div>
-      <div>
+      <div className="mt-10 mb-3">
         <span className="totalCount">전체 {cards.meta.total} 개</span>
       </div>
-     
+      <div className="grid grid-cols-4">
         {cards.photos.map((data, index) => (
           <Photo key={index} data={data} />
         ))}
-      
+      </div>
     </div>
   );
 }
