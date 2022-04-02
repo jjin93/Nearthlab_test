@@ -1,0 +1,34 @@
+.ReactModal__Overlay {
+  background-color: rgba(0, 0, 0, 0.6) !important;
+}
+
+.ReactModal__Content {
+  width: 710px;
+  height: 1020px;
+  margin: 0 auto;
+}
+
+.category {
+  margin: 20px 0 10px;
+}
+
+.textLabelInfo {
+    width: 60px;
+    height: 20px;
+    margin: 0 327px 11px 2px;
+    font-family: NotoSansCJKkr;
+    font-size: 14px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: -0.5px;
+    color: #727682;
+}
+
+img.Group-6 {
+    width: 88px;
+    height: 34px;
+    margin: 599px 123px 27px 32px;
+    object-fit: contain;
+  }

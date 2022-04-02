@@ -1,8 +1,7 @@
 import React from "react";
-import Body from "./Components/Body";
 import styled from "styled-components";
 import LabelContents from "./Components/LabelContents";
-import {ReactComponent as LabelIcon} from "./group-2.svg"
+import {ReactComponent as LabelIcon} from "./img/group-2.svg"
 
 function App() {
   return (
@@ -13,8 +12,7 @@ function App() {
           <span className="mr-16 mb-3 ml-0.5 font-sans text-base">라벨 종류 선택</span>
         </div>
         <LabelContents />
-        <div class="border border-grey-400" />
-        <Body />
+        
       </div>
     </div>
   );

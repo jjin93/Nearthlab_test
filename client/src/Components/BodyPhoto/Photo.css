@@ -1,0 +1,13 @@
+.ReactModal__Overlay {
+    background-color: rgba(0, 0, 0, 0.6) !important;
+  }
+  
+  .ReactModal__Content {
+    width: 710px;
+    height: 1020px;
+    margin: 0 auto;
+  }
+  
+  .category {
+    margin : 20px 0 10px;
+  }

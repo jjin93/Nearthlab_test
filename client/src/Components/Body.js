@@ -1,19 +1,27 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Photo from "./BodyPhoto/Photo";
-function Body() {
+function Body(props) {
   const [cards, setCards] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+  let checked = props.checkedLabels;
 
-  const fetchCards = async () => {
+  const fetchCards = async (labels) => {
     try {
       // 요청이 시작할 때에는 error 와 cards를 초기화하고
       setError(null);
       setCards(null);
       //loading 상태를 true로 바꿈
       setLoading(true);
-      const response = await axios.get(" https://tester-api.nearthlab.com/v1/photos?page=1&per=16");
+      let getLabelTypeIds = '';
+      const getlabelInit = "&labelTypeIds[]=";
+      for (let i = 0; i < labels.length; i++) {
+        getLabelTypeIds += getlabelInit + labels[i];
+      }
+      
+
+      const response = await axios.get(`https://tester-api.nearthlab.com/v1/photos?page=1&per=16${getLabelTypeIds}`);
       setCards(response.data); // 데이터는 response.data 안에 들어있음
     } catch (e) {
       setError(e);
@@ -22,8 +30,8 @@ function Body() {
   };
 
   useEffect(() => {
-    fetchCards();
-  }, []);
+    fetchCards(checked);
+  }, [checked]);
 
   if (loading) return <div>로딩중...</div>;
   if (error) return <div>에러가 발생했습니다.</div>;
