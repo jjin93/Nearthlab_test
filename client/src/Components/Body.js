@@ -33,16 +33,17 @@ function Body(props) {
     fetchCards(checked);
   }, [checked]);
 
-  if (loading) return <div>로딩중...</div>;
-  if (error) return <div>에러가 발생했습니다.</div>;
+  // if (loading) return <div>로딩중...</div>;
+  // if (error) return <div>에러가 발생했습니다.</div>;
   // 아직 users가 받아와지지 않았다면 아무것도 표시되지 않음
   if (!cards) return null;
 
   //드디어 cards가 성공적으로 받아와진 상태.
   return (
     <div>
-      <div className="mt-10 mb-3">
-        <span className="totalCount">전체 {cards.meta.total} 개</span>
+      <div className="mt-6 mb-3">
+        
+        <span className="font-semibold text-md">전체 {cards.meta.total.toString()}개</span>
       </div>
       <div className="grid grid-cols-4">
         {cards.photos.map((data, index) => (

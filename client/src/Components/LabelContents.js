@@ -44,12 +44,12 @@ function LabelContents() {
 
   return (
     <>
-      <div className="flex flex-row mt-5 mb-5">
+      <div className="flex flex-row mt-5 mb-6">
         {labelType.map((label, index) => (
           <Label key={index} label={label} checkedLabelHandler={checkedLabelHandler} />
         ))}
       </div>
-      <div class="border border-grey-400" />
+      <div class="border border-grey-200" />
       <Body checkedLabels={checkedLabels}/>
     </>
   );

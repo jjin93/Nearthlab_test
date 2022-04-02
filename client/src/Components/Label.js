@@ -11,9 +11,9 @@ const Label = (props) => {
   };
 
   return (
-    <div className="mr-3">
-      <input type="checkbox" checked={bChecked} onChange={(e) => checkHandler(e)} />
-      <span class="labelName">{labelName[1]}</span>
+    <div className="flex flex-row gap-2 text-xs mr-3">
+      <input type="checkbox" checked={bChecked} onChange={(e) => checkHandler(e)} className="mt-0.5"/>
+      <span >{labelName[1]}</span>
     </div>
   );
 };
