@@ -33,7 +33,7 @@ const Modal = ({ isOpen, onCancel, data, changeCompleted, isCompleted, labelType
       right: "auto",
       bottom: "auto",
       marginRight: "-50%",
-      height: "1024px",
+      height: "95%",
       width: "800px",
       transform: "translate(-50%, -50%)",
       border: "none",
