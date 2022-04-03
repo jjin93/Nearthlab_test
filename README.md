@@ -14,8 +14,14 @@ git clone https://github.com/jjin93/nearthlab_test.git
 
 ```sh
 cd nearthlab-test
+```
+```sh
 cd client
+```
+```sh
 yarn
+```
+```sh
 yarn start
 ```
 
