@@ -38,7 +38,7 @@ const Photo = (props) => {
 
   return (
     <div className="relative w-44 mt-3 mr-1.5 mb-1.5 ml-0 border border-gray-300">
-      <img src={photoUrl} alt="" className="w-44 h-44" onClick={openModal} />
+      <img src={photoUrl} alt="" className="w-44 h-44 cursor-pointer" onClick={openModal}  />
       <div className="absolute top-3 right-3">{isCompleted ? <LabelDoneIcon /> : <LabelImperfectIcon />}</div>
       <div className="flex flex-row mt-3 mb-3 ml-2.5">
         <span className=" font-sans text-xs mr-14">{photoName}</span>
