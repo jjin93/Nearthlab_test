@@ -1,10 +1,8 @@
 import styled from "styled-components";
 
 const Pagination = ({ meta, handleSetPage}) => {
-  let per = meta.per;
   let maxPage = meta.maxPage;
   let currentPage = meta.currentPage;
-  let total = meta.total;
   let offset = Math.floor((currentPage - 1) / 5); 
 
   return (
