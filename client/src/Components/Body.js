@@ -23,6 +23,7 @@ function Body(props) {
 
       const response = await axios.get(`https://tester-api.nearthlab.com/v1/photos?page=1&per=16${getLabelTypeIds}`);
       setCards(response.data); // 데이터는 response.data 안에 들어있음
+      
     } catch (e) {
       setError(e);
     }

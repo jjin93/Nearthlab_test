@@ -20,7 +20,7 @@ const Modal = ({ isOpen, onCancel, data, changeCompleted, isCompleted}) => {
   photoTakenAt = photoTakenAt.split('.');
   photoTakenAt = photoTakenAt[0].split('T');
 
-  let photoTakenDate = moment(photoTakenAt[0], "YYYY-MM-DD").format('YYYY. MM. DD. ');
+  let photoTakenDate = moment(photoTakenAt[0], "YYYY-MM-DD").format('YYYY. M. D. ');
   let photoTakenTime = moment(photoTakenAt[1], 'h:mm:ss').format('a h:mm:ss');
   let photoTaken = photoTakenDate + photoTakenTime;
   let createdAt = data.createdAt;
@@ -36,6 +36,7 @@ const Modal = ({ isOpen, onCancel, data, changeCompleted, isCompleted}) => {
       bottom: "auto",
       marginRight: "-50%",
       height: "95%",
+      width: "65%",
       transform: "translate(-50%, -50%)",
       border: "none",
       borderRadius: "20px",
@@ -55,18 +56,18 @@ const Modal = ({ isOpen, onCancel, data, changeCompleted, isCompleted}) => {
       </div>
       <div className="flex flex-row border border-blue-400 gap-4">
         <div className="basis-1/3 border border-yellow-400">
-          <img src={photoUrl} alt="" className="object-cover w-56 h-44 mb-5" />
-          <div className="flex flex-row mb-2 text-xs">
+          <img src={photoUrl} alt="" className="object-fill mb-5" />
+          <div className="flex flex-row border mb-2 text-xs">
             <span className=" basis-1/3 font-semibold">파일명</span>
-            <span className=" basis-2/3 text-center">{photoName}</span>
+            <span className=" basis-2/3 text-left">{photoName}</span>
           </div>
-          <div className="flex flex-row  mb-2 text-xs">
+          <div className="flex flex-row border mb-2 text-xs">
             <span className=" basis-1/3 font-semibold">촬영시간</span>
-            <span className=" basis-2/3 text-center">{photoTaken}</span>
+            <span className=" basis-2/3 text-left">{photoTaken}</span>
           </div>
-          <div className="flex flex-row mb-2 text-xs">
+          <div className="flex flex-row border mb-2 text-xs">
             <span className=" basis-1/3 font-semibold">등록일</span>
-            <span className=" basis-2/3 text-center">{created}</span>
+            <span className=" basis-2/3 text-left">{created}</span>
           </div>
         </div>
         <div className="basis-2/3 border border-green-400">
