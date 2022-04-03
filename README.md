@@ -7,15 +7,15 @@
 과제물 복제 :
 
 ```sh
-$ git clone https://github.com/jjin93/nearthlab_test.git
+git clone https://github.com/jjin93/nearthlab_test.git
 ```
 
 과제물 실행 :
 
 ```sh
-$ cd nearthlab-test
-$ cd client
-$ yarn
-$ yarn start
+cd nearthlab-test
+cd client
+yarn
+yarn start
 ```
 
