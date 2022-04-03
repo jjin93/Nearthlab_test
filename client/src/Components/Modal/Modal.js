@@ -11,7 +11,7 @@ import { ReactComponent as IncompleteIcon } from "../../img/group-6.svg";
 import LabelInfo from "./LabelInfo";
 
 
-const Modal = ({ isOpen, onCancel, data }) => {
+const Modal = ({ isOpen, onCancel, data, changeCompleted, isCompleted}) => {
   let photoUrl = data.photoUrl;
   let photoName = photoUrl.split("/");
   photoName = photoName[3];
@@ -27,7 +27,6 @@ const Modal = ({ isOpen, onCancel, data }) => {
   let created = moment(createdAt.split('T')[0],"YYYY-MM-DD").format('YYYY. MM. DD. ');
 
   let labels = data.labels;
-  let completed = data.completed;
   
   const modalStyles = {
     content: {
@@ -51,22 +50,22 @@ const Modal = ({ isOpen, onCancel, data }) => {
   return (
     <ReactModal isOpen={isOpen} style={modalStyles} ariaHideApp={false}>
       <div className="flex flex-row gap-6 border border-red-400 mt-4 mb-4">
-        <h1>파일 상세 정보</h1>
-        <button onClick={handleClickCancel}>닫기</button>
+        <span className="font-semibold basis-5/6">파일 상세 정보</span>
+        <button onClick={handleClickCancel} className="basis-1/6">닫기</button>
       </div>
       <div className="flex flex-row border border-blue-400 gap-4">
         <div className="basis-1/3 border border-yellow-400">
           <img src={photoUrl} alt="" className="object-cover w-56 h-44 mb-5" />
-          <div className="flex flex-row border mb-2 text-xs">
-            <span className=" basis-1/3">파일명</span>
+          <div className="flex flex-row mb-2 text-xs">
+            <span className=" basis-1/3 font-semibold">파일명</span>
             <span className=" basis-2/3 text-center">{photoName}</span>
           </div>
-          <div className="flex flex-row border mb-2 text-xs">
-            <span className=" basis-1/3 ">촬영시간</span>
+          <div className="flex flex-row  mb-2 text-xs">
+            <span className=" basis-1/3 font-semibold">촬영시간</span>
             <span className=" basis-2/3 text-center">{photoTaken}</span>
           </div>
-          <div className="flex flex-row border mb-2 text-xs">
-            <span className=" basis-1/3">등록일</span>
+          <div className="flex flex-row mb-2 text-xs">
+            <span className=" basis-1/3 font-semibold">등록일</span>
             <span className=" basis-2/3 text-center">{created}</span>
           </div>
         </div>
@@ -78,8 +77,8 @@ const Modal = ({ isOpen, onCancel, data }) => {
           {labels.map((label, index) => (
             <LabelInfo key={index} label={label} index={index}/>
           ))}
-          {completed ? (<DoneIcon className="w-20 h-8 object-contain mt-10 ml-96 mr-3" />)
-            : (<IncompleteIcon className="w-20 h-8 object-contain mt-10 ml-96 mr-3"/>)}
+          {isCompleted ? (<DoneIcon className="w-20 h-8 object-contain mt-10 ml-96 mr-3" onClick={changeCompleted}/>)
+            : (<IncompleteIcon className="w-20 h-8 object-contain mt-10 ml-96 mr-3" onClick={changeCompleted}/>)}
           
         </div>
       </div>
