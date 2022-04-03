@@ -13,7 +13,7 @@ git clone https://github.com/jjin93/nearthlab_test.git
 과제물 실행 :
 
 ```sh
-cd nearthlab-test
+cd nearthlab_test
 ```
 ```sh
 cd client
