@@ -49,8 +49,8 @@ function LabelContents() {
           <Label key={index} label={label} checkedLabelHandler={checkedLabelHandler} />
         ))}
       </div>
-      <div class="border border-grey-200" />
-      <Body checkedLabels={checkedLabels}/>
+      <div class="border border-gray-200" />
+      <Body checkedLabels={checkedLabels} labelType={labelType}/>
     </>
   );
 }

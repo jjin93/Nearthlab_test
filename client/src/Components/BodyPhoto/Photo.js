@@ -15,9 +15,9 @@ const Photo = (props) => {
   let createdAt = props.data.createdAt;
   let completed = props.data.completed;
   let labels = props.data.labels.length;
+  let labelType = props.labelType;
   const [isOpen, setOpen] = useState(false);
-  const [isCompleted, setCompleted] = useState(() => JSON.parse(window.localStorage.getItem(`completed${id}`)) || 0
-  );
+  const [isCompleted, setCompleted] = useState(() => JSON.parse(window.localStorage.getItem(`completed${id}`)) || 0);
   const openModal = () => {
     setOpen(true);
   };
@@ -25,26 +25,26 @@ const Photo = (props) => {
     setOpen(false);
   };
   const changeCompleted = () => {
-    console.log('completed 바뀜');
     setCompleted(!isCompleted);
-  }
+  };
 
-  useEffect(()=>{
-    window.localStorage.setItem(`completed${id}`, JSON.stringify(completed));
-  },[completed])
+  useEffect(() => {
+    if (window.localStorage.getItem(`completed${id}`) !== null) {
+      window.localStorage.setItem(`completed${id}`, JSON.stringify(isCompleted));
+    } else {
+      window.localStorage.setItem(`completed${id}`, JSON.stringify(completed));
+    }
+  }, [isCompleted]);
 
   return (
-    <div className="relative w-44 mt-3 mr-1.5 mb-1.5 ml-0 border border-black-200">
+    <div className="relative w-44 mt-3 mr-1.5 mb-1.5 ml-0 border border-gray-300">
       <img src={photoUrl} alt="" className="w-44 h-44" onClick={openModal} />
-      <div className="absolute top-3 right-3">
-        {isCompleted ? (<LabelDoneIcon />):(<LabelImperfectIcon/>)}
-        
-      </div>
+      <div className="absolute top-3 right-3">{isCompleted ? <LabelDoneIcon /> : <LabelImperfectIcon />}</div>
       <div className="flex flex-row mt-3 mb-3 ml-2.5">
         <span className=" font-sans text-xs mr-14">{photoName}</span>
         <LabelButtonIcon labels={labels} />
       </div>
-      <Modal isOpen={isOpen} onCancel={closeModal} data={props.data} changeCompleted={changeCompleted} isCompleted={isCompleted}/>
+      <Modal isOpen={isOpen} onCancel={closeModal} data={props.data} changeCompleted={changeCompleted} isCompleted={isCompleted} labelType={labelType}/>
     </div>
   );
 };

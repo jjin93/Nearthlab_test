@@ -11,7 +11,7 @@ import { ReactComponent as IncompleteIcon } from "../../img/group-6.svg";
 import LabelInfo from "./LabelInfo";
 
 
-const Modal = ({ isOpen, onCancel, data, changeCompleted, isCompleted}) => {
+const Modal = ({ isOpen, onCancel, data, changeCompleted, isCompleted, labelType}) => {
   let photoUrl = data.photoUrl;
   let photoName = photoUrl.split("/");
   photoName = photoName[3];
@@ -35,8 +35,8 @@ const Modal = ({ isOpen, onCancel, data, changeCompleted, isCompleted}) => {
       right: "auto",
       bottom: "auto",
       marginRight: "-50%",
-      height: "95%",
-      width: "65%",
+      height: "1024px",
+      width: "800px",
       transform: "translate(-50%, -50%)",
       border: "none",
       borderRadius: "20px",
@@ -50,33 +50,33 @@ const Modal = ({ isOpen, onCancel, data, changeCompleted, isCompleted}) => {
 
   return (
     <ReactModal isOpen={isOpen} style={modalStyles} ariaHideApp={false}>
-      <div className="flex flex-row gap-6 border border-red-400 mt-4 mb-4">
+      <div className="flex flex-row gap-6 mt-4 mb-4">
         <span className="font-semibold basis-5/6">파일 상세 정보</span>
         <button onClick={handleClickCancel} className="basis-1/6">닫기</button>
       </div>
-      <div className="flex flex-row border border-blue-400 gap-4">
-        <div className="basis-1/3 border border-yellow-400">
-          <img src={photoUrl} alt="" className="object-fill mb-5" />
-          <div className="flex flex-row border mb-2 text-xs">
+      <div className="flex flex-row gap-4">
+        <div className="basis-1/3">
+          <img src={photoUrl} alt="" className="object-fill mb-5 border border-gray-300"/>
+          <div className="flex flex-row mb-2 text-xs">
             <span className=" basis-1/3 font-semibold">파일명</span>
             <span className=" basis-2/3 text-left">{photoName}</span>
           </div>
-          <div className="flex flex-row border mb-2 text-xs">
+          <div className="flex flex-row mb-2 text-xs">
             <span className=" basis-1/3 font-semibold">촬영시간</span>
             <span className=" basis-2/3 text-left">{photoTaken}</span>
           </div>
-          <div className="flex flex-row border mb-2 text-xs">
+          <div className="flex flex-row mb-2 text-xs">
             <span className=" basis-1/3 font-semibold">등록일</span>
             <span className=" basis-2/3 text-left">{created}</span>
           </div>
         </div>
-        <div className="basis-2/3 border border-green-400">
-          <div className="flex flex-row border">
+        <div className="basis-2/3">
+          <div className="flex flex-row">
             <ToolIcon className="mt-1.5"/>
             <span className="textLabelInfo">라벨 정보</span>
           </div>
           {labels.map((label, index) => (
-            <LabelInfo key={index} label={label} index={index}/>
+            <LabelInfo key={index} label={label} index={index} labelType={labelType}/>
           ))}
           {isCompleted ? (<DoneIcon className="w-20 h-8 object-contain mt-10 ml-96 mr-3" onClick={changeCompleted}/>)
             : (<IncompleteIcon className="w-20 h-8 object-contain mt-10 ml-96 mr-3" onClick={changeCompleted}/>)}

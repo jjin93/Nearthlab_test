@@ -6,6 +6,7 @@ function Body(props) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   let checked = props.checkedLabels;
+  let labelType = props.labelType;
 
   const fetchCards = async (labels) => {
     try {
@@ -23,7 +24,7 @@ function Body(props) {
 
       const response = await axios.get(`https://tester-api.nearthlab.com/v1/photos?page=1&per=16${getLabelTypeIds}`);
       setCards(response.data); // 데이터는 response.data 안에 들어있음
-      
+
     } catch (e) {
       setError(e);
     }
@@ -31,6 +32,7 @@ function Body(props) {
   };
 
   useEffect(() => {
+    
     fetchCards(checked);
   }, [checked]);
 
@@ -48,7 +50,8 @@ function Body(props) {
       </div>
       <div className="grid grid-cols-4">
         {cards.photos.map((data, index) => (
-          <Photo key={index} data={data} />
+          
+          <Photo key={index} data={data} labelType={labelType}/>
         ))}
       </div>
     </div>
